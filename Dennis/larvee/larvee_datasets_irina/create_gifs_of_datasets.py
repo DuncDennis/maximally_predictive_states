@@ -22,10 +22,11 @@ in_out_data = [
 for data_to_load, save_name, title in in_out_data:
 
     data = np.load(data_to_load)
-
+    # num_frames = 900
+    num_frames = data.shape[0]
     plot_larvee.animate_and_save(data,
                                  file_name=save_name,
-                                 num_frames=data.shape[0],
+                                 num_frames=num_frames,
                                  interval=1000 / 5,
                                  fps=10,
                                  title=title)
